@@ -1,22 +1,54 @@
+
+
 function treasureHoardTier1() {
   var diceRoll = diceRollD100();
-  console.log(diceRoll);
+  console.log("initial hoard roll: ", diceRoll);
   if (diceRoll <= 36) {
-    return "Nothing!"
+    console.log("Nothing!")
+    return
   }
   if (diceRoll <= 60) {
-    return "Roll 1d6 times on Magic Item Table A"
+    var diceRoll6 = diceRollD6();
+    console.log("Roll " + diceRoll6 + " times on Magic Item Table A")
+    console.log(rollOnTableA(diceRoll6))
+    return
   }
   if (diceRoll <= 75) {
-    return "Roll 1d4 times on Magic Item Table B"
+    var diceRoll4 = diceRollD4();
+    console.log("Roll " + diceRoll4 + " times on Magic Item Table B")
+    console.log("dont have this table yet")
+    return
   }
   if (diceRoll <= 85) {
-    return "Roll 1d4 times on Magic Item Table C"
+    var diceRoll4 = diceRollD4();
+    console.log("Roll " + diceRoll4 + " times on Magic Item Table C")
+    console.log("dont have this table yet")
+    return
   }
   if (diceRoll <= 97) {
-    return "Roll 1d4 times on Magic Item Table F"
+    var diceRoll4 = diceRollD4();
+    console.log("Roll " + diceRoll4 + " times on Magic Item Table F")
+    console.log("dont have this table yet")
+    return
   }
-  return "Roll once on Magic Item Table G"
+  console.log("Roll once on Magic Item Table G")
+  console.log("dont have this table yet")
+  return
+}
+
+function rollOnTableA(diceRoll6) {
+  var magicItemList = new Array(diceRoll6).fill(null);
+
+  return magicItemList.map(element => {
+    return magicTableA();
+  });
+}
+
+function diceRollD6() {
+  return Math.floor(Math.random() * 6) + 1
+}
+function diceRollD4() {
+  return Math.floor(Math.random() * 4) + 1
 }
 
 function diceRollD100() {
@@ -49,4 +81,4 @@ function magicTableA() {
   return "100 Driftglobe"
 }
 
-console.log(treasureHoardTier1());
+treasureHoardTier1()
