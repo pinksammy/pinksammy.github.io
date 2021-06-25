@@ -38,8 +38,7 @@ function treasureHoardTier1() {
 
 function rollOnTableA(diceRoll6) {
   var magicItemList = new Array(diceRoll6).fill(null);
-
-  return magicItemList.map(element => {
+  return magicItemList.map(function () {
     return magicTableA();
   });
 }
@@ -54,31 +53,92 @@ function diceRollD4() {
 function diceRollD100() {
   return Math.floor(Math.random() * 100) + 1
 }
-function magicTableA() {
+// function magicTableA() {
+//   var diceRoll = diceRollD100();
+//   console.log(diceRoll);
+//   if (diceRoll <= 50) {
+//     return "01-50 Potion of healing"
+//   }
+//   if (diceRoll <= 60) {
+//     return "51-60 Spell scroll(cantrip)"
+//   }
+//   if (diceRoll <= 70) {
+//     return "61-70 Potion of climbing"
+//   }
+//   if (diceRoll <= 90) {
+//     return "71-90 Spell scroll (1st level)"
+//   }
+//   if (diceRoll <= 94) {
+//     return "91-94 Spell scroll (2nd level)"
+//   }
+//   if (diceRoll <= 98) {
+//     return "95-98 Potion of greater healing"
+//   }
+//   if (diceRoll === 99) {
+//     return "99 Bag of holding"
+//   }
+//   return "100 Driftglobe"
+// }
+
+var magicTableAData = [
+  {
+    name: "Potion of healing",
+    minimumValue: 1,
+    maximumValue: 50,
+  },
+  {
+    name: "Spell scroll(cantrip)",
+    minimumValue: 51,
+    maximumValue: 60,
+  },
+  {
+    name: "Potion of climbing",
+    minimumValue: 61,
+    maximumValue: 70,
+  },
+  {
+    name: "Spell scroll (1st level)",
+    minimumValue: 71,
+    maximumValue: 90,
+  },
+  {
+    name: "Spell scroll (2nd level)",
+    minimumValue: 91,
+    maximumValue: 94,
+  },
+  {
+    name: "Potion of Greater Healing",
+    minimumValue: 95,
+    maximumValue: 98,
+  },
+  {
+    name: "Bag of Holding",
+    minimumValue: 99,
+    maximumValue: 99,
+  },
+  {
+    name: "Driftglobe",
+    minimumValue: 100,
+    maximumValue: 100,
+  }
+];
+
+function genericTable(magicTableData) {
   var diceRoll = diceRollD100();
   console.log(diceRoll);
-  if (diceRoll <= 50) {
-    return "01-50 Potion of healing"
-  }
-  if (diceRoll <= 60) {
-    return "51-60 Spell scroll(cantrip)"
-  }
-  if (diceRoll <= 70) {
-    return "61-70 Potion of climbing"
-  }
-  if (diceRoll <= 90) {
-    return "71-90 Spell scroll (1st level)"
-  }
-  if (diceRoll <= 94) {
-    return "91-94 Spell scroll (2nd level)"
-  }
-  if (diceRoll <= 98) {
-    return "95-98 Potion of greater healing"
-  }
-  if (diceRoll === 99) {
-    return "99 Bag of holding"
-  }
-  return "100 Driftglobe"
+
+  magicTableData.find(function (magicItemData) {
+    var min = magicItemData.minimumValue;
+    var max = magicItemData.maximumValue;
+    var name = magicItemData.name;
+
+    if (min <= diceRoll && diceRoll <= max) {
+      console.log(min + "-" + max + " " + name)
+      return true;
+    }
+
+    return false;
+  })
 }
 
-treasureHoardTier1()
+genericTable(magicTableAData);
