@@ -1,3 +1,24 @@
+function treasureHoardTier1() {
+  var diceRoll = diceRollD100();
+  console.log(diceRoll);
+  if (diceRoll <= 36) {
+    return "Nothing!"
+  }
+  if (diceRoll <= 60) {
+    return "Roll 1d6 times on Magic Item Table A"
+  }
+  if (diceRoll <= 75) {
+    return "Roll 1d4 times on Magic Item Table B"
+  }
+  if (diceRoll <= 85) {
+    return "Roll 1d4 times on Magic Item Table C"
+  }
+  if (diceRoll <= 97) {
+    return "Roll 1d4 times on Magic Item Table F"
+  }
+  return "Roll once on Magic Item Table G"
+}
+
 function diceRollD100() {
   return Math.floor(Math.random() * 100) + 1
 }
@@ -28,4 +49,4 @@ function magicTableA() {
   return "100 Driftglobe"
 }
 
-console.log(magicTableA());
+console.log(treasureHoardTier1());
