@@ -64,6 +64,9 @@ function diceRollD4() {
 function diceRollD8() {
   return Math.floor(Math.random() * 8) + 1
 }
+function diceRollD12() {
+  return Math.floor(Math.random() * 12) + 1
+}
 function diceRollD100() {
   return Math.floor(Math.random() * 100) + 1
 }
@@ -1200,6 +1203,620 @@ var magicTableGData = [
   },
   {
     name: "Wings of flying",
+    minimumValue: 100,
+    maximumValue: 100,
+  }
+];
+var magicTableHData = [
+  {
+    name: "Weapon, +3",
+    minimumValue: 1,
+    maximumValue: 10,
+  },
+  {
+    name: "Amulet of the planes",
+    minimumValue: 11,
+    maximumValue: 12,
+  },
+  {
+    name: "Carpet of playing",
+    minimumValue: 13,
+    maximumValue: 14,
+  },
+  {
+    name: "Crystal ball (very rare version)",
+    minimumValue: 15,
+    maximumValue: 16,
+  },
+  {
+    name: "Ring of regeneration",
+    minimumValue: 17,
+    maximumValue: 18,
+  },
+  {
+    name: "Ring of shooting stars",
+    minimumValue: 19,
+    maximumValue: 20,
+  },
+  {
+    name: "Ring of telekinesis",
+    minimumValue: 21,
+    maximumValue: 22,
+  },
+  {
+    name: "Robe of scintillating colors",
+    minimumValue: 23,
+    maximumValue: 24,
+  },
+  {
+    name: "Robe of stars",
+    minimumValue: 25,
+    maximumValue: 26,
+  },
+  {
+    name: "Rod of absorption",
+    minimumValue: 27,
+    maximumValue: 28,
+  },
+  {
+    name: "Rod of alertness",
+    minimumValue: 29,
+    maximumValue: 30,
+  },
+  {
+    name: "Rod of security",
+    minimumValue: 31,
+    maximumValue: 32,
+  },
+  {
+    name: "Rod of the pact keeper, +3",
+    minimumValue: 33,
+    maximumValue: 34,
+  },
+  {
+    name: "Scimitar of speed",
+    minimumValue: 35,
+    maximumValue: 36,
+  },
+  {
+    name: "Shield, +3",
+    minimumValue: 37,
+    maximumValue: 38,
+  },
+  {
+    name: "Staff of fire",
+    minimumValue: 39,
+    maximumValue: 40,
+  },
+  {
+    name: "Staff of frost",
+    minimumValue: 41,
+    maximumValue: 42,
+  },
+  {
+    name: "Staff of power",
+    minimumValue: 43,
+    maximumValue: 44,
+  },
+  {
+    name: "Staff of striking",
+    minimumValue: 45,
+    maximumValue: 46,
+  },
+  {
+    name: "Staff of thunder and lightning",
+    minimumValue: 47,
+    maximumValue: 48,
+  },
+  {
+    name: "Sword of sharpness",
+    minimumValue: 49,
+    maximumValue: 50,
+  },
+  {
+    name: "Wand of polymorph",
+    minimumValue: 51,
+    maximumValue: 52,
+  },
+  {
+    name: "Wand of the war mage, +3",
+    minimumValue: 53,
+    maximumValue: 54,
+  },
+  {
+    name: "Adamantine armor (half plate)",
+    minimumValue: 55,
+    maximumValue: 55,
+  },
+  {
+    name: "Adamantine armor (plate)",
+    minimumValue: 56,
+    maximumValue: 56,
+  },
+  {
+    name: "Animated shield",
+    minimumValue: 57,
+    maximumValue: 57,
+  },
+  {
+    name: "Belt of fire giant strength",
+    minimumValue: 58,
+    maximumValue: 58,
+  },
+  {
+    name: "Belt of frost (or stone) giant strength",
+    minimumValue: 59,
+    maximumValue: 59,
+  },
+  {
+    name: "Armor, +1 breastplate",
+    minimumValue: 60,
+    maximumValue: 60,
+  },
+  {
+    name: "Armor of resistance (breastplate)",
+    minimumValue: 61,
+    maximumValue: 61,
+  },
+  {
+    name: "Candle of invocation",
+    minimumValue: 62,
+    maximumValue: 62,
+  },
+  {
+    name: "Armor, +2 chain mail",
+    minimumValue: 63,
+    maximumValue: 63,
+  },
+  {
+    name: "Armor, +2 chain shirt",
+    minimumValue: 64,
+    maximumValue: 64,
+  },
+  {
+    name: "Cloak of arachnida",
+    minimumValue: 65,
+    maximumValue: 65,
+  },
+  {
+    name: "Dancing sword",
+    minimumValue: 66,
+    maximumValue: 66,
+  },
+  {
+    name: "Demon armor",
+    minimumValue: 67,
+    maximumValue: 67,
+  },
+  {
+    name: "Dragon scale mail",
+    minimumValue: 68,
+    maximumValue: 68,
+  },
+  {
+    name: "Dwarven plate",
+    minimumValue: 69,
+    maximumValue: 69,
+  },
+  {
+    name: "Dwarven thrower",
+    minimumValue: 70,
+    maximumValue: 70,
+  },
+  {
+    name: "Efreeti bottle",
+    minimumValue: 71,
+    maximumValue: 71,
+  },
+  {
+    name: "Figurine of wondrous power (obsidian steel)",
+    minimumValue: 72,
+    maximumValue: 72,
+  },
+  {
+    name: "Frost brand",
+    minimumValue: 73,
+    maximumValue: 73,
+  },
+  {
+    name: "Helm of brilliance",
+    minimumValue: 74,
+    maximumValue: 74,
+  },
+  {
+    name: "Horn of Valhalla (bronze)",
+    minimumValue: 75,
+    maximumValue: 75,
+  },
+  {
+    name: "Instrument of the bards (Anstruth harp)",
+    minimumValue: 76,
+    maximumValue: 76,
+  },
+  {
+    name: "Ioun stone (absorption)",
+    minimumValue: 77,
+    maximumValue: 77,
+  },
+  {
+    name: "Ioun stone (agility)",
+    minimumValue: 78,
+    maximumValue: 78,
+  },
+  {
+    name: "Ioun stone (fortitude)",
+    minimumValue: 79,
+    maximumValue: 79,
+  },
+  {
+    name: "Ioun stone (insight)",
+    minimumValue: 80,
+    maximumValue: 80,
+  },
+  {
+    name: "Ioun stone (intellect)",
+    minimumValue: 81,
+    maximumValue: 81,
+  },
+  {
+    name: "Ioun stone (leadership)",
+    minimumValue: 82,
+    maximumValue: 82,
+  },
+  {
+    name: "Ioun stone (strength)",
+    minimumValue: 83,
+    maximumValue: 83,
+  },
+  {
+    name: "Armor, +2 leather",
+    minimumValue: 84,
+    maximumValue: 84,
+  },
+  {
+    name: "Manual of bodily health",
+    minimumValue: 85,
+    maximumValue: 85,
+  },
+  {
+    name: "Manual of gainful exercise",
+    minimumValue: 86,
+    maximumValue: 86,
+  },
+  {
+    name: "Manual of golems",
+    minimumValue: 87,
+    maximumValue: 87,
+  },
+  {
+    name: "Manual of quickness of action",
+    minimumValue: 88,
+    maximumValue: 88,
+  },
+  {
+    name: "Mirror of life trapping",
+    minimumValue: 89,
+    maximumValue: 89,
+  },
+  {
+    name: "Nine lives stealer",
+    minimumValue: 90,
+    maximumValue: 90,
+  },
+  {
+    name: "Oathbow",
+    minimumValue: 91,
+    maximumValue: 91,
+  },
+  {
+    name: "Armor, +2 scale mail",
+    minimumValue: 92,
+    maximumValue: 92,
+  },
+  {
+    name: "Spellguard shield",
+    minimumValue: 93,
+    maximumValue: 93,
+  },
+  {
+    name: "Armor, +1 splint",
+    minimumValue: 94,
+    maximumValue: 94,
+  },
+  {
+    name: "Armor of resistance (splint)",
+    minimumValue: 95,
+    maximumValue: 95,
+  },
+  {
+    name: "Armor, +1 studded leather",
+    minimumValue: 96,
+    maximumValue: 96,
+  },
+  {
+    name: "Armor of resistance (studded leather)",
+    minimumValue: 97,
+    maximumValue: 97,
+  },
+  {
+    name: "Tome of clear thought",
+    minimumValue: 98,
+    maximumValue: 98,
+  },
+  {
+    name: "Tome of leadership of influence",
+    minimumValue: 99,
+    maximumValue: 99,
+  },
+  {
+    name: "Tome of understanding",
+    minimumValue: 100,
+    maximumValue: 100,
+  }
+];
+var magicTableIData = [
+  {
+    name: "Defender",
+    minimumValue: 1,
+    maximumValue: 15,
+  },
+  {
+    name: "Hammer of thunderbolts",
+    minimumValue: 6,
+    maximumValue: 10,
+  },
+  {
+    name: "Luck blade",
+    minimumValue: 11,
+    maximumValue: 15,
+  },
+  {
+    name: "Sword of answering",
+    minimumValue: 16,
+    maximumValue: 20,
+  },
+  {
+    name: "Holy avenger",
+    minimumValue: 21,
+    maximumValue: 23,
+  },
+  {
+    name: "Ring of djinni summoning",
+    minimumValue: 24,
+    maximumValue: 26,
+  },
+  {
+    name: "Ring of invisibility",
+    minimumValue: 27,
+    maximumValue: 29,
+  },
+  {
+    name: "Ring of spell turning",
+    minimumValue: 30,
+    maximumValue: 32,
+  },
+  {
+    name: "Rod of lordly might",
+    minimumValue: 33,
+    maximumValue: 35,
+  },
+  {
+    name: "Staff of the magi",
+    minimumValue: 36,
+    maximumValue: 38,
+  },
+  {
+    name: "Vorpal sword",
+    minimumValue: 39,
+    maximumValue: 41,
+  },
+  {
+    name: "Belt of cloud giant strength",
+    minimumValue: 42,
+    maximumValue: 43,
+  },
+  {
+    name: "Armor, +2 breastplate",
+    minimumValue: 44,
+    maximumValue: 45,
+  },
+  {
+    name: "Armor, +3 chain mail",
+    minimumValue: 46,
+    maximumValue: 47,
+  },
+  {
+    name: "Armor, +3 chain shirt",
+    minimumValue: 48,
+    maximumValue: 49,
+  },
+  {
+    name: "Cloak of invisibility",
+    minimumValue: 50,
+    maximumValue: 51,
+  },
+  {
+    name: "Crystal ball (legendary version)",
+    minimumValue: 52,
+    maximumValue: 53,
+  },
+  {
+    name: "Armor, +1 half plate",
+    minimumValue: 54,
+    maximumValue: 55,
+  },
+  {
+    name: "Iron flask",
+    minimumValue: 56,
+    maximumValue: 57,
+  },
+  {
+    name: "Armor, +3 leather",
+    minimumValue: 58,
+    maximumValue: 59,
+  },
+  {
+    name: "Armor, +1 plate",
+    minimumValue: 60,
+    maximumValue: 61,
+  },
+  {
+    name: "Robe of the archmagi",
+    minimumValue: 62,
+    maximumValue: 63,
+  },
+  {
+    name: "Rod of resurrection",
+    minimumValue: 64,
+    maximumValue: 65,
+  },
+  {
+    name: "Armor, +1 scale mail",
+    minimumValue: 66,
+    maximumValue: 67,
+  },
+  {
+    name: "Scarab of protection",
+    minimumValue: 68,
+    maximumValue: 69,
+  },
+  {
+    name: "Armor, +2 splint",
+    minimumValue: 70,
+    maximumValue: 71,
+  },
+  {
+    name: "Armor, +2 studded leather",
+    minimumValue: 72,
+    maximumValue: 73,
+  },
+  {
+    name: "Well of many worlds",
+    minimumValue: 74,
+    maximumValue: 75,
+  },
+  {
+    name: "Magic armor (ROLL D12)",  // TODO: make mini table, code it etc
+    minimumValue: 76,
+    maximumValue: 76,
+  },
+  {
+    name: "Apparatus of Kwalish",
+    minimumValue: 77,
+    maximumValue: 77,
+  },
+  {
+    name: "Armor of invulnerability",
+    minimumValue: 78,
+    maximumValue: 78,
+  },
+  {
+    name: "Belt of storm giant strength",
+    minimumValue: 79,
+    maximumValue: 79,
+  },
+  {
+    name: "Cubic gate",
+    minimumValue: 80,
+    maximumValue: 80,
+  },
+  {
+    name: "Deck of many things",
+    minimumValue: 81,
+    maximumValue: 81,
+  },
+  {
+    name: "Efreeti chain",
+    minimumValue: 82,
+    maximumValue: 82,
+  },
+  {
+    name: "Armor of resistance (half plate)",
+    minimumValue: 83,
+    maximumValue: 83,
+  },
+  {
+    name: "Horn of Valhalla (iron)",
+    minimumValue: 84,
+    maximumValue: 84,
+  },
+  {
+    name: "Instrument of the bards (Ollamh harp)",
+    minimumValue: 85,
+    maximumValue: 85,
+  },
+  {
+    name: "Ioun stone (greater absorption)",
+    minimumValue: 86,
+    maximumValue: 86,
+  },
+  {
+    name: "Ioun stone (mastery)",
+    minimumValue: 87,
+    maximumValue: 87,
+  },
+  {
+    name: "Ioun stone (regeneration)",
+    minimumValue: 88,
+    maximumValue: 88,
+  },
+  {
+    name: "Plate armor of etherealness",
+    minimumValue: 89,
+    maximumValue: 89,
+  },
+  {
+    name: "Plate armor of resistance",
+    minimumValue: 90,
+    maximumValue: 90,
+  },
+  {
+    name: "Ring of air elemental command",
+    minimumValue: 91,
+    maximumValue: 91,
+  },
+  {
+    name: "Ring of earth elemental command",
+    minimumValue: 92,
+    maximumValue: 92,
+  },
+  {
+    name: "Ring of fire elemental command",
+    minimumValue: 93,
+    maximumValue: 93,
+  },
+  {
+    name: "Ring of three wishes",
+    minimumValue: 94,
+    maximumValue: 94,
+  },
+  {
+    name: "Ring of water elemental command",
+    minimumValue: 95,
+    maximumValue: 95,
+  },
+  {
+    name: "Sphere of annihilation",
+    minimumValue: 96,
+    maximumValue: 96,
+  },
+  {
+    name: "Talisman of pure good",
+    minimumValue: 97,
+    maximumValue: 97,
+  },
+  {
+    name: "Talisman of the sphere",
+    minimumValue: 98,
+    maximumValue: 98,
+  },
+  {
+    name: "Talisman of ultimate evil",
+    minimumValue: 99,
+    maximumValue: 99,
+  },
+  {
+    name: "Tome of the stilled tongue",
     minimumValue: 100,
     maximumValue: 100,
   }
