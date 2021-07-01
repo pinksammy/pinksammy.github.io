@@ -28,11 +28,11 @@ function treasureHoardTier1() {
   if (diceRoll <= 97) {
     var diceRoll4 = diceRollD4();
     console.log("Roll " + diceRoll4 + " times on Magic Item Table F")
-    console.log("dont have this table yet")
+    rollOnTableF(diceRoll4)
     return
   }
   console.log("Roll once on Magic Item Table G")
-  console.log("dont have this table yet")
+  rollOnTableG()
   return
 }
 
@@ -53,6 +53,15 @@ function rollOnTableC(diceRoll4) {
   return magicItemList.map(function () {
     return genericTable(magicTableCData);
   });
+}
+function rollOnTableF(diceRoll4) {
+  var magicItemList = new Array(diceRoll4).fill(null);
+  return magicItemList.map(function () {
+    return genericTable(magicTableFData);
+  });
+}
+function rollOnTableG() {
+  return genericTable(magicTableGData);
 }
 
 function diceRollD6() {
@@ -455,6 +464,125 @@ var magicTableCData = [
   {
     name: "Sending stones",
     minimumValue: 100,
+    maximumValue: 100,
+  }
+];
+var magicTableDData = [
+  {
+    name: "Potion of supreme healing",
+    minimumValue: 1,
+    maximumValue: 20,
+  },
+  {
+    name: "Potion of invisibility",
+    minimumValue: 21,
+    maximumValue: 30,
+  },
+  {
+    name: "Potion of speed",
+    minimumValue: 31,
+    maximumValue: 40,
+  },
+  {
+    name: "Spell scroll (6th level)",
+    minimumValue: 41,
+    maximumValue: 50,
+  },
+  {
+    name: "Spell scroll (7th level)",
+    minimumValue: 51,
+    maximumValue: 57,
+  },
+  {
+    name: "Ammunition, +3",
+    minimumValue: 58,
+    maximumValue: 62,
+  },
+  {
+    name: "Oil of sharpness",
+    minimumValue: 63,
+    maximumValue: 67,
+  },
+  {
+    name: "Potion of flying",
+    minimumValue: 68,
+    maximumValue: 72,
+  },
+  {
+    name: "Potion of cloud giant strength",
+    minimumValue: 73,
+    maximumValue: 77,
+  },
+  {
+    name: "Potion of longevity",
+    minimumValue: 78,
+    maximumValue: 82,
+  },
+  {
+    name: "Potion of vitality",
+    minimumValue: 83,
+    maximumValue: 87,
+  },
+  {
+    name: "Spell scroll (8th level)",
+    minimumValue: 88,
+    maximumValue: 92,
+  },
+  {
+    name: "Horshoes of a zephyr",
+    minimumValue: 93,
+    maximumValue: 95,
+  },
+  {
+    name: "Nolzur's marvelous pigments",
+    minimumValue: 96,
+    maximumValue: 98,
+  },
+  {
+    name: "Bag of devouring",
+    minimumValue: 99,
+    maximumValue: 99,
+  },
+  {
+    name: "Portable hole",
+    minimumValue: 100,
+    maximumValue: 100,
+  }
+];
+var magicTableEData = [
+  {
+    name: "Spell scroll (8th level)",
+    minimumValue: 1,
+    maximumValue: 30,
+  },
+  {
+    name: "Potion of storm giant strength",
+    minimumValue: 31,
+    maximumValue: 55,
+  },
+  {
+    name: "Potion of supreme healing",
+    minimumValue: 56,
+    maximumValue: 70,
+  },
+  {
+    name: "Spell scroll (9th level)",
+    minimumValue: 71,
+    maximumValue: 85,
+  },
+  {
+    name: "Universal solvent",
+    minimumValue: 86,
+    maximumValue: 93,
+  },
+  {
+    name: "Arrow of slaying",
+    minimumValue: 94,
+    maximumValue: 98,
+  },
+  {
+    name: "Sovereign glue",
+    minimumValue: 99,
     maximumValue: 100,
   }
 ];
@@ -1819,6 +1947,80 @@ var magicTableIData = [
     name: "Tome of the stilled tongue",
     minimumValue: 100,
     maximumValue: 100,
+  }
+];
+var magicTableFigurineData = [
+  {
+    name: "Bronze griffon",
+    minimumValue: 1,
+    maximumValue: 1,
+  },
+  {
+    name: "Ebony fly",
+    minimumValue: 2,
+    maximumValue: 2,
+  },
+  {
+    name: "Golden lions",
+    minimumValue: 3,
+    maximumValue: 3,
+  },
+  {
+    name: "Ivory goats",
+    minimumValue: 4,
+    maximumValue: 4,
+  },
+  {
+    name: "Marble elephant",
+    minimumValue: 5,
+    maximumValue: 5,
+  },
+  {
+    name: "Onyx dog",
+    minimumValue: 6,
+    maximumValue: 7,
+  },
+  {
+    name: "Serpentine owl",
+    minimumValue: 8,
+    maximumValue: 8,
+  }
+];
+var magicTableArmorData = [
+  {
+    name: "Armor, +2 half plate",
+    minimumValue: 1,
+    maximumValue: 2,
+  },
+  {
+    name: "Armor, +2 plate",
+    minimumValue: 3,
+    maximumValue: 4,
+  },
+  {
+    name: "Armor, +3 studded leather",
+    minimumValue: 5,
+    maximumValue: 6,
+  },
+  {
+    name: "Armor, +3 breastplate",
+    minimumValue: 7,
+    maximumValue: 8,
+  },
+  {
+    name: "Armor, +3 splint",
+    minimumValue: 9,
+    maximumValue: 10,
+  },
+  {
+    name: "Armor, +3 half plate",
+    minimumValue: 11,
+    maximumValue: 11,
+  },
+  {
+    name: "Armor, +3 plate",
+    minimumValue: 12,
+    maximumValue: 12,
   }
 ];
 
