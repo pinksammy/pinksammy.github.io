@@ -1,110 +1,77 @@
-
-
-function treasureHoardTier1() {
-  var diceRoll = diceRollD100();
-  console.log("initial hoard roll: ", diceRoll);
-  if (diceRoll <= 36) {
-    console.log("Nothing!")
-    return
+var magicTableArmorData = [
+  {
+    name: "Magic Armor, +2 half plate",
+    minimumValue: 1,
+    maximumValue: 2,
+  },
+  {
+    name: "Magic Armor, +2 plate",
+    minimumValue: 3,
+    maximumValue: 4,
+  },
+  {
+    name: "Magic Armor, +3 studded leather",
+    minimumValue: 5,
+    maximumValue: 6,
+  },
+  {
+    name: "Magic Armor, +3 breastplate",
+    minimumValue: 7,
+    maximumValue: 8,
+  },
+  {
+    name: "Magic Armor, +3 splint",
+    minimumValue: 9,
+    maximumValue: 10,
+  },
+  {
+    name: "Magic Armor, +3 half plate",
+    minimumValue: 11,
+    maximumValue: 11,
+  },
+  {
+    name: "Magic Armor, +3 plate",
+    minimumValue: 12,
+    maximumValue: 12,
   }
-  if (diceRoll <= 60) {
-    var diceRoll6 = diceRollD6();
-    console.log("Roll " + diceRoll6 + " times on Magic Item Table A")
-    rollOnTableA(diceRoll6)
-    return
+];
+var magicTableFigurineData = [
+  {
+    name: "Figurine of wondrous power (Bronze griffon)",
+    minimumValue: 1,
+    maximumValue: 1,
+  },
+  {
+    name: "Figurine of wondrous power (Ebony fly)",
+    minimumValue: 2,
+    maximumValue: 2,
+  },
+  {
+    name: "Figurine of wondrous power (Golden lions)",
+    minimumValue: 3,
+    maximumValue: 3,
+  },
+  {
+    name: "Figurine of wondrous power (Ivory goats)",
+    minimumValue: 4,
+    maximumValue: 4,
+  },
+  {
+    name: "Figurine of wondrous power (Marble elephant)",
+    minimumValue: 5,
+    maximumValue: 5,
+  },
+  {
+    name: "Figurine of wondrous power (Onyx dog)",
+    minimumValue: 6,
+    maximumValue: 7,
+  },
+  {
+    name: "Figurine of wondrous power (Serpentine owl)",
+    minimumValue: 8,
+    maximumValue: 8,
   }
-  if (diceRoll <= 75) {
-    var diceRoll4 = diceRollD4();
-    console.log("Roll " + diceRoll4 + " times on Magic Item Table B")
-    rollOnTableB(diceRoll4)
-    return
-  }
-  if (diceRoll <= 85) {
-    var diceRoll4 = diceRollD4();
-    console.log("Roll " + diceRoll4 + " times on Magic Item Table C")
-    rollOnTableC(diceRoll4)
-    return
-  }
-  if (diceRoll <= 97) {
-    var diceRoll4 = diceRollD4();
-    console.log("Roll " + diceRoll4 + " times on Magic Item Table F")
-    rollOnTableF(diceRoll4)
-    return
-  }
-  console.log("Roll once on Magic Item Table G")
-  rollOnTableG()
-  return
-}
-
-function rollOnTableA(diceRoll6) {
-  var magicItemList = new Array(diceRoll6).fill(null);
-  return magicItemList.map(function () {
-    return genericTable(magicTableAData);
-  });
-}
-function rollOnTableB(diceRoll4) {
-  var magicItemList = new Array(diceRoll4).fill(null);
-  return magicItemList.map(function () {
-    return genericTable(magicTableBData);
-  });
-}
-function rollOnTableC(diceRoll4) {
-  var magicItemList = new Array(diceRoll4).fill(null);
-  return magicItemList.map(function () {
-    return genericTable(magicTableCData);
-  });
-}
-function rollOnTableF(diceRoll4) {
-  var magicItemList = new Array(diceRoll4).fill(null);
-  return magicItemList.map(function () {
-    return genericTable(magicTableFData);
-  });
-}
-function rollOnTableG() {
-  return genericTable(magicTableGData);
-}
-
-function diceRollD6() {
-  return Math.floor(Math.random() * 6) + 1
-}
-function diceRollD4() {
-  return Math.floor(Math.random() * 4) + 1
-}
-function diceRollD8() {
-  return Math.floor(Math.random() * 8) + 1
-}
-function diceRollD12() {
-  return Math.floor(Math.random() * 12) + 1
-}
-function diceRollD100() {
-  return Math.floor(Math.random() * 100) + 1
-}
-// function magicTableA() {
-//   var diceRoll = diceRollD100();
-//   console.log(diceRoll);
-//   if (diceRoll <= 50) {
-//     return "01-50 Potion of healing"
-//   }
-//   if (diceRoll <= 60) {
-//     return "51-60 Spell scroll(cantrip)"
-//   }
-//   if (diceRoll <= 70) {
-//     return "61-70 Potion of climbing"
-//   }
-//   if (diceRoll <= 90) {
-//     return "71-90 Spell scroll (1st level)"
-//   }
-//   if (diceRoll <= 94) {
-//     return "91-94 Spell scroll (2nd level)"
-//   }
-//   if (diceRoll <= 98) {
-//     return "95-98 Potion of greater healing"
-//   }
-//   if (diceRoll === 99) {
-//     return "99 Bag of holding"
-//   }
-//   return "100 Driftglobe"
-// }
+];
 
 var magicTableAData = [
   {
@@ -895,9 +862,10 @@ var magicTableGData = [
     maximumValue: 11,
   },
   {
-    name: "Figurine of wondrous power (ROLL d8)", // TODO: mini table with list
+    name: "Figurine of wondrous power (ROLL d8)",
     minimumValue: 12,
     maximumValue: 14,
+    subTable: magicTableFigurineData,
   },
   {
     name: "Adamantine armor (breastplate)",
@@ -1347,7 +1315,7 @@ var magicTableHData = [
     maximumValue: 12,
   },
   {
-    name: "Carpet of playing",
+    name: "Carpet of flying",
     minimumValue: 13,
     maximumValue: 14,
   },
@@ -1824,9 +1792,10 @@ var magicTableIData = [
     maximumValue: 75,
   },
   {
-    name: "Magic armor (ROLL D12)",  // TODO: make mini table, code it etc
+    name: "Magic armor (ROLL D12)",
     minimumValue: 76,
     maximumValue: 76,
+    subTable: magicTableArmorData,
   },
   {
     name: "Apparatus of Kwalish",
@@ -1949,97 +1918,3 @@ var magicTableIData = [
     maximumValue: 100,
   }
 ];
-var magicTableFigurineData = [
-  {
-    name: "Bronze griffon",
-    minimumValue: 1,
-    maximumValue: 1,
-  },
-  {
-    name: "Ebony fly",
-    minimumValue: 2,
-    maximumValue: 2,
-  },
-  {
-    name: "Golden lions",
-    minimumValue: 3,
-    maximumValue: 3,
-  },
-  {
-    name: "Ivory goats",
-    minimumValue: 4,
-    maximumValue: 4,
-  },
-  {
-    name: "Marble elephant",
-    minimumValue: 5,
-    maximumValue: 5,
-  },
-  {
-    name: "Onyx dog",
-    minimumValue: 6,
-    maximumValue: 7,
-  },
-  {
-    name: "Serpentine owl",
-    minimumValue: 8,
-    maximumValue: 8,
-  }
-];
-var magicTableArmorData = [
-  {
-    name: "Armor, +2 half plate",
-    minimumValue: 1,
-    maximumValue: 2,
-  },
-  {
-    name: "Armor, +2 plate",
-    minimumValue: 3,
-    maximumValue: 4,
-  },
-  {
-    name: "Armor, +3 studded leather",
-    minimumValue: 5,
-    maximumValue: 6,
-  },
-  {
-    name: "Armor, +3 breastplate",
-    minimumValue: 7,
-    maximumValue: 8,
-  },
-  {
-    name: "Armor, +3 splint",
-    minimumValue: 9,
-    maximumValue: 10,
-  },
-  {
-    name: "Armor, +3 half plate",
-    minimumValue: 11,
-    maximumValue: 11,
-  },
-  {
-    name: "Armor, +3 plate",
-    minimumValue: 12,
-    maximumValue: 12,
-  }
-];
-
-function genericTable(magicTableData) {
-  var diceRoll = diceRollD100();
-  console.log(diceRoll);
-
-  magicTableData.find(function (magicItemData) {
-    var min = magicItemData.minimumValue;
-    var max = magicItemData.maximumValue;
-    var name = magicItemData.name;
-
-    if (min <= diceRoll && diceRoll <= max) {
-      console.log(min + "-" + max + " " + name)
-      return true;
-    }
-
-    return false;
-  })
-}
-
-treasureHoardTier1()
